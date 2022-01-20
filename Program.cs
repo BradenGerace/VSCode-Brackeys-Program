@@ -8,6 +8,7 @@ namespace VSCode_Brackeys_Program
 
         static void Main(string[] args)
         {
+            //If statement checking cash
             Console.WriteLine("Welcome! This game costs $5 to play. Please enter cash.");
 
             int cash = Convert.ToInt32(Console.ReadLine());
@@ -23,6 +24,33 @@ namespace VSCode_Brackeys_Program
             else {
                 int change = cash - 5;
                 Console.WriteLine("You may play. Your change is: $" + change);
+            }
+
+            //switch statement
+
+            Console.Write("Input a number between 1 and 5: ");
+
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            switch (num) {
+                case 1:
+                    Console.WriteLine("One");
+                    break;
+                case 2:
+                    Console.WriteLine("Two");
+                    break;
+                case 3:
+                    Console.WriteLine("Three");
+                    break;
+                case 4:
+                    Console.WriteLine("Four");
+                    break;
+                case 5:
+                    Console.WriteLine("Five");
+                    break;
+                default:
+                    Console.WriteLine("Default");
+                    break;
             }
 
             //Average of 3 numbers
