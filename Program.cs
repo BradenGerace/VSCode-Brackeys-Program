@@ -9,6 +9,34 @@ namespace VSCode_Brackeys_Program
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Enter a sentence: ");
+
+            string inputSentence = Console.ReadLine();
+
+            WordsInSentence(inputSentence);
+
+            MeetAlien();
+            Console.ReadKey();
+            MeetAlien();
+            Console.ReadKey();
+            Console.WriteLine(Convert.ToInt32(Square(4)));
+            Console.ReadKey();
+            int resultMultiply01 = Multiply(3, 8);
+            Console.ReadKey();
+            int resultMultiply02 = Multiply(7,13);
+            Console.ReadKey();
+            int resultOfResults = Multiply(resultMultiply01, resultMultiply02);
+            Console.ReadKey();
+            Console.WriteLine("Those numbers multiplied equals " + resultOfResults);
+            Console.ReadKey();
+            if (resultOfResults % 2 == 0)
+            {
+                Console.WriteLine("Your result is even");
+            }
+            else {
+                Console.WriteLine("Result is an odd number");
+            }
+
             //list and sort student names
              List<string> students = new List<string>();
             while (true)
@@ -257,6 +285,33 @@ namespace VSCode_Brackeys_Program
             Console.WriteLine("Spot on.");
 
             Console.ReadKey();
+        }
+
+        static void MeetAlien() {
+            Random numberGen = new Random();
+
+            string name = "X-" + numberGen.Next(10, 9999);
+            int age = numberGen.Next(20, 5000);
+
+            Console.WriteLine("Hi, I'm " + name);
+            Console.WriteLine("I'm " + age + " years old.");
+        }
+
+        static int Square (int toSquare) {
+            int result = toSquare * toSquare;
+            return result;
+        }
+
+        static int Multiply (int num01, int num02) {
+            int result = num01 * num02;
+            Console.WriteLine("The result is: " + result);
+            return result;
+        }
+
+        static int WordsInSentence (string sentence) {
+            int sentenceLength = sentence.Split(' ').Length;
+            Console.WriteLine("There are " + sentenceLength + " words in your sentence.");
+            return sentenceLength;
         }
     }
 }
