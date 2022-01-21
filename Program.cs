@@ -8,6 +8,44 @@ namespace VSCode_Brackeys_Program
 
         static void Main(string[] args)
         {
+
+            Random numberGen = new Random();
+
+            int roll = 0;
+            int roll2 = 1;
+            int attempts = 0;
+
+            Console.WriteLine("Press enter to roll the die.");
+
+            while (roll != roll2)
+            {
+                Console.ReadKey();
+
+                roll = numberGen.Next(1, 7);
+                roll2 = numberGen.Next(1, 7);
+                Console.WriteLine("You rolled: " + roll + " and " + roll2);
+                if (roll == roll2)
+                {
+                    Console.WriteLine("Your rolls matched!");
+                }
+                attempts++;
+            }
+
+            Console.WriteLine("you made " + attempts + " rolls");
+
+            Console.Write("How many powers of 2? ");
+
+            int count = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < count; i++)
+            {
+                double result2 = Math.Pow(2, i);
+                Console.WriteLine(result2);  
+            }
+
+            
+
+
             //If statement checking cash
             Console.WriteLine("Welcome! This game costs $5 to play. Please enter cash.");
 
