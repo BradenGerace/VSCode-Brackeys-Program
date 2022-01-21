@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace VSCode_Brackeys_Program
 {
@@ -8,7 +9,34 @@ namespace VSCode_Brackeys_Program
 
         static void Main(string[] args)
         {
+            //list and sort student names
+             List<string> students = new List<string>();
+            while (true)
+            {
+                Console.WriteLine("Enter student's name, write q to quit: ");
+                string name = Console.ReadLine();
+                if(name == "q")
+                {
+                    break;
+                }
+                students.Add(name);
+            }
 
+
+            students.Sort();
+
+
+            Console.WriteLine("\n----------------------");
+            Console.WriteLine("Here are students names sorted alphabetically");
+            for(int i=0; i<students.Count; i++)
+            {
+                Console.WriteLine(i+1 + ". "+ students[i]);
+            }
+            Console.WriteLine("\n");
+            Console.WriteLine("Press any key to quit");
+            Console.ReadKey();
+
+            //roll the dice
             Random numberGen = new Random();
 
             int roll = 0;
@@ -33,6 +61,7 @@ namespace VSCode_Brackeys_Program
 
             Console.WriteLine("you made " + attempts + " rolls");
 
+            //Math.Pow
             Console.Write("How many powers of 2? ");
 
             int count = Convert.ToInt32(Console.ReadLine());
@@ -43,7 +72,70 @@ namespace VSCode_Brackeys_Program
                 Console.WriteLine(result2);  
             }
 
-            
+            List<string> shoppingList = new List<string>();
+
+            shoppingList.Add("Dreams");
+            shoppingList.Add("Miracles");
+            shoppingList.Add("Rainbows");
+            shoppingList.Add("Ponies");
+
+            for (int i = 0; i < shoppingList.Count; i++)
+            {
+                Console.WriteLine(shoppingList[i]);
+            }
+
+            shoppingList.RemoveAt(1);
+
+            Console.WriteLine("--------------------------");
+
+            for (int i = 0; i < shoppingList.Count; i++)
+            {
+                Console.WriteLine(shoppingList[i]);
+            }
+
+            //Array
+            string[] beans = {
+                "Vanilla", "Coffee", "Green", "Black", "Pinto"
+            };
+
+            int j = 0;
+
+            string[] movies = new string[4];
+
+            Console.WriteLine("Enter your 4 fav movies: ");
+
+            //foreach loop for array
+            foreach (string item in movies)
+            {
+                movies[j] = Console.ReadLine();
+                j++;
+            }
+
+            int x = 0;
+
+            Console.WriteLine("Your fav movies are: ");
+
+            foreach (string item in movies)
+            {
+                Console.WriteLine(movies[x++]);
+            }
+
+            Console.WriteLine("\nHere they are alphabetically: ");
+
+            Array.Sort(movies);
+
+            for (int i = 0; i < movies.Length; i++)
+            {
+                Console.WriteLine(movies[i]);
+            }
+
+            Console.WriteLine("The best beans: ");
+
+            for (int i = 0; i < 5; i++)
+            {
+                int rank = i + 1;
+                Console.WriteLine(rank + ". " + beans[i]);
+            }
 
 
             //If statement checking cash
@@ -155,6 +247,14 @@ namespace VSCode_Brackeys_Program
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Flubbed it");
             }
+
+            Console.WriteLine("What is your fav animal?");
+
+            string favAnimal = Console.ReadLine();
+
+            Console.WriteLine("I guess: " + favAnimal);
+
+            Console.WriteLine("Spot on.");
 
             Console.ReadKey();
         }
